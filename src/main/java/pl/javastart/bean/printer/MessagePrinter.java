@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import pl.javastart.bean.decorator.MessageDecorator;
 import pl.javastart.bean.producer.FileMessage;
 import pl.javastart.bean.producer.MessageProducer;
+import pl.javastart.bean.producer.Producer;
 
 @Component
 public class MessagePrinter {
@@ -21,7 +22,7 @@ public class MessagePrinter {
     }
 
     @Autowired
-    public MessagePrinter(@FileMessage MessageProducer messageProducer) {
+    public MessagePrinter(@Producer(type = Producer.ProducerType.SIMPLE) MessageProducer messageProducer) {
         this.messageProducer = messageProducer;
     }
 
