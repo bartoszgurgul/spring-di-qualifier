@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("fileMessageProducer")
+@FileMessage
 public class FileMessageProducer implements MessageProducer {
     @Override
     public String getMsg() {
